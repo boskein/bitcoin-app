@@ -1,4 +1,5 @@
 .mainTables  {
+    display: flex;
     flex-direction: row;
     width: 930px;
     margin: 0 auto;
