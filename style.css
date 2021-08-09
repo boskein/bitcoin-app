@@ -181,7 +181,7 @@ main {
 
 .mainTables {
     display: flex;
-    overflow-x: hidden;
+    flex-direction: column;
     scroll-behavior: smooth;
 }
 
@@ -454,13 +454,33 @@ main {
     color: #757575;
 }
 
+.plans-container__slider {
+    display: flex;
+    height: 316px;
+    /* gap: 50px; */
+    overflow-x: scroll;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    margin: 0 30px;
+}
+
+/* .plans-container__slider::-webkit-scrollbar {
+    background-color: var(--soft-orange);
+    height: 3px;
+} */
+
+/* .plans-container__slider::-webkit-scrollbar-thumb {
+    background-color: var(--bitcoin-orange);
+} */
+
 .plans-container__card {
     position: relative;
-    width: 70%;
-    min-width: 230px;
+    scroll-snap-align: center;
+    width: 65%;
+    min-width: 190px;
     max-width: 300px;
     height: 250px;
-    margin: 50px auto 0;
+    margin: 50px 5px 0;
     padding: 0 15px;
     background-color: var(--just-white);
     border-radius: 8px;
@@ -476,10 +496,21 @@ main {
     font-size: 1.2rem;
     font-weight: bold;
     padding: 6px;
-    background-color: var(--bitcoin-orange);
     border-radius: 8px;
     color: var(--just-white);
+    
+}
 
+.plans-card__recommended--orange {
+    background-color: var(--bitcoin-orange);
+}
+
+.plans-card__recommended--blue {
+    background-color: var(--secondary-blue);
+}
+
+.plans-card__recommended--green {
+    background-color: var(--warm-black);
 }
 
 .plan-card__title {
@@ -495,6 +526,7 @@ main {
     font-size: 5.2rem;
     font-weight: bold;
     line-height: 5.3rem;
+    letter-spacing: -0.08em;
     color: black;
 }
 
@@ -502,11 +534,37 @@ main {
     font-size: 1.2rem;
     font-weight: 300;
     vertical-align: 25px;
+    margin-right: 4px;
 }
 
 .plan-card__saving {
     font-size: 1.2rem;
     color: #757575;
+}
+
+.plan-card__ca {
+    width: 150px;
+    height: 48px;
+    margin-top: 20px;
+    background-color: var(--off-white);
+    border: 2px solid var(--bitcoin-orange);
+    border-radius: 4px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.4rem;
+    font-weight: bold;
+    line-height: 1.8rem;
+    color: var(--warm-black);
+    cursor: pointer;
+    outline: none;
+}
+
+.plan-card__ca span{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url("./assets/icons/orange-right-arrow.svg");
+    background-repeat: no-repeat;
+    vertical-align: text-bottom;
 }
 
 footer {
